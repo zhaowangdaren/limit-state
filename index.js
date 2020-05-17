@@ -1,20 +1,5 @@
 /**
- * 存储
- * 例子
- * 初始设置，某个值
- Store.set('test', new Date().getTime())
- // 绑定事件
-  Store.bind('test', (v) => {
-    console.log('new test value', v, Store.state)
-  })
-  setTimeout(() => {
-    console.log('set store')
-    Store.state.test = new Date().getTime()
-  }, 1000)
-  删除某一属性
-  Store.clear(key)
-  删除全部属性
-  Store.clearAll()
+ * limit-state
  */
 class Store {
   constructor () {

@@ -1,3 +1,36 @@
 # limit state
 
 A simple and lightweight state manager
+
+## Usage
+
+### Init
+
+```js
+import Store from './index.js'
+
+// init 'test' to state
+Store.set('test', new Date().getTime())
+```
+
+### Bind Event
+
+```js
+// bind event.
+Store.bind('test', (v) => {
+  console.log('new test value', v, Store.state)
+})
+setTimeout(() => {
+  // The bound event will be called
+  Store.state.test = new Date().getTime()
+}, 1000)
+```
+
+### Destroy
+
+```js
+  // clear property Store.state[key]
+  Store.clear(key)
+  // clear all properties in Store.state
+  Store.clearAll()
+```
