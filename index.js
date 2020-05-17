@@ -43,6 +43,7 @@ class Store {
   clear (key) {
     delete this.state[key]
     delete this.stateShadow[key]
+    this.bindStack[key] = []
     return this
   }
   
@@ -50,6 +51,7 @@ class Store {
     for (let key in this.stateShadow) {
       delete this.state[key]
       delete this.stateShadow[key]
+      this.bindStack[key] = []
     }
     return this
   }
