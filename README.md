@@ -20,9 +20,14 @@ Store.set('test', new Date().getTime())
 Store.bind('test', (v) => {
   console.log('new test value', v, Store.state)
 })
+```
+
+When change state value, the bound event will be called.
+
+```js
 setTimeout(() => {
   // The bound event will be called
-  Store.state.test = new Date().getTime()
+  Store.state.test = new Date().getTime() // new text value 1234...00
 }, 1000)
 ```
 
